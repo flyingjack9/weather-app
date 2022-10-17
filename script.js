@@ -1,9 +1,10 @@
 const locationForm = document.getElementById("locationForm");
+const displayWeather = document.getElementsByClassName("weatherInfo");
 
 locationForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const location = document.getElementById("location");
-    console.log(location.value);
+    getWeatherData(location.value.trim());
 
 })
 
@@ -17,5 +18,5 @@ async function getWeatherData(location) {
     const response = await fetch (apiCall, {mode: 'cors'});
     const weatherData = await response.json();
 
-    console.log(weatherData.main.temp);
+    console.log(weatherData.name);
 }

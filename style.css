@@ -12,9 +12,12 @@ html, body {
 }
 
 .title {
-    position: absolute;
     font-size: 8em;
     opacity: 0.4;
+}
+
+h4, h3 {
+    margin: 0;
 }
 
 form {
@@ -55,8 +58,71 @@ input[type="text"] {
     padding: 1em;
 }
 
+.weatherInfo {
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cityName {
+    font-size: 6em;
+    opacity: 0.4;
+    text-align: center;
+}
+
 .inputSection {
     box-shadow: 10px 10px 10px rgb(35, 7, 49);
     display: flex;
     align-items: center;
+}
+
+.weatherGrid {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    grid-template-areas: "temp icon wind" "temp icon humidity" "feelsLike description visibility";
+    justify-items: center;
+    align-items: center;
+}
+
+.weatherLines {
+    color: orange;
+    font-weight: 900;
+}
+
+#temp {
+    grid-area: temp;
+    font-weight: 900;
+    font-size: 4em;
+    color: ivory;
+}
+
+#feelsLike {
+    grid-area: feelsLike;
+}
+
+#icon {
+    grid-area: icon;
+    font-size: 80px;
+    margin: 0;
+}
+
+#description {
+    grid-area: description;
+}
+
+#wind {
+    grid-area: wind;
+}
+
+#humidity {
+    grid-area: humidity;
+}
+
+#visibility {
+    grid-area: visibility;
+}
+
+#resetIcon {
+    cursor: pointer;
 }
